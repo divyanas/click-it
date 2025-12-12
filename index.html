@@ -77,27 +77,25 @@
 
     /* ✨ Photo Frame */
    .frame {
-    width: 400px;    /* change from 300px */
-    height: 450px;   /* change from 350px */
+    width: 400px;    /* increased size */
+    height: 450px;   /* increased size */
     margin: auto;
     border: 6px solid gold;
     border-radius: 15px;
     box-shadow: 0 0 25px gold;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;   /* use relative positioning */
 }
-
-
 
 .frame img {
-    width: 90%;      /* reduce from 100% to zoom out */
-    height: auto;    /* maintain aspect ratio */
-    object-fit: contain;  /* ensure full image visible */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* fills the frame completely */
+    transform: translate(-50%, -50%);  /* center the image */
 }
-
-
 
 
     /* ✨ Popup */
@@ -237,6 +235,7 @@ window.addEventListener('click', (e)=>{
 
 </body>
 </html>
+
 
 
 
