@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advance Birthday Surprise for Mama 💛</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #0a0a0a;
+        font-family: "Poppins", sans-serif;
+        color: white;
+        overflow-x: hidden;
+    }
+
+    /* ✨ CLEAN PREMIUM THEME */
+    .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(180deg, #1a002b, #000);
+    }
+    .hero h1 {
+        font-size: 3.8rem;
+        animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+        0% { text-shadow: 0 0 20px #ff00e1; }
+        100% { text-shadow: 0 0 40px #ff47ff; }
+    }
+
+    .count-box {
+        margin-top: 20px;
+        font-size: 2rem;
+        padding: 15px 25px;
+        border-radius: 15px;
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(10px);
+        display: inline-block;
+    }
+
+    /* ✨ Floating soft particles */
+    .particle {
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background: radial-gradient(circle, #ffb8ff, transparent);
+        border-radius: 50%;
+        animation: float 6s linear infinite;
+        opacity: 0.8;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-120vh); opacity: 0; }
+    }
+
+    /* ✨ Sections */
+    .section {
+        padding: 100px 20px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 1s ease;
+    }
+    .show { opacity: 1; transform: translateY(0); }
+
+    /* Teddy Simplified SVG */
+    .teddy-box {
+        margin-top: 40px;
+    }
+
+    /* ✨ Photo Frame */
+    .frame {
+        width: 300px;
+        height: 350px;
+        margin: auto;
+        border: 6px solid gold;
+        border-radius: 15px;
+        box-shadow: 0 0 25px gold;
+        overflow: hidden;
+    }
+
+    .frame img {
+        width: 100%; height: 100%; object-fit: cover;
+    }
+
+    /* ✨ Popup */
+    #popup {
+        position: fixed;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background: rgba(20,20,20,0.95);
+        padding: 30px;
+        border-radius: 20px;
+        width: 80%; max-width: 330px;
+        text-align: center;
+        box-shadow: 0 0 30px #ff00e1;
+        transition: 0.4s;
+        z-index: 1000;
+    }
+    #popup.show { transform: translate(-50%, -50%) scale(1); }
+
+    .btn {
+        padding: 12px 20px;
+        background: #ff00c8;
+        border-radius: 12px;
+        border: none;
+        color: white;
+        cursor: pointer;
+        margin-top: 20px;
+        box-shadow: 0 0 15px #ff00c8;
+    }
+
+    /* Tap Explosion */
+    .tap-pop {
+        position: fixed;
+        width: 20px;
+        height: 20px;
+        background: white;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: explode 0.6s ease-out forwards;
+    }
+
+    @keyframes explode {
+        0% { transform: scale(1); opacity: 1; }
+        100% { transform: scale(10); opacity: 0; }
+    }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Advance Happy Birthday Mama 💛</h1>
+    <div class="count-box" id="count"></div>
+</div>
+
+<!-- SECTION 1 -->
+<div class="section" id="s1">
+    <h2>✨ A Special Surprise Just for You… ✨</h2>
+    <p>Mama, wishing you joy, love, and all the happiness in advance for your special day!</p>
+</div>
+
+<!-- SECTION 2 With Teddy -->
+<div class="section" id="s2">
+    <h2>🧸 Someone Wants to Hug You</h2>
+    <div class="teddy-box">
+        <img src="https://png.pngtree.com/png-vector/20240125/ourlarge/pngtree-cute-teddy-bear-with-birthday-cake-png-image_11546747.png" width="180"/>
+    </div>
+</div>
+
+<!-- SECTION 3 Photo Frame -->
+<div class="section" id="s3">
+    <h2>🎞️ A Memory of You</h2>
+    <div class="frame">
+        <img src="C:\Users\asdiv\OneDrive\Desktop\adv\1000314843.jpg" />
+    </div>
+</div>
+
+<!-- SECTION 4 Secret Message -->
+<div class="section" id="s4">
+    <h2>💌 click to see a message!</h2>
+    <button class="btn" onclick="openMsg()">Open 💛</button>
+</div>
+
+<!-- Popup -->
+<div id="popup">
+    <h3>Dear Mama 💛</h3>
+    <p>Sending you my love and warmest wishes in advance! 🎉 May your birthday be as amazing as you are.</p>
+    <button class="btn" onclick="closeMsg()">Close</button>
+</div>
+
+<script>
+// COUNTDOWN
+const target = new Date('Dec 14, 2025 00:00:00').getTime();
+setInterval(() => {
+    let now = new Date().getTime();
+    let diff = target - now;
+    let d = Math.floor(diff / (1000*60*60*24));
+    let h = Math.floor((diff % (1000*60*60*24))/(1000*60*60));
+    let m = Math.floor((diff % (1000*60*60))/(1000*60));
+    let s = Math.floor((diff % (1000*60))/1000);
+    document.getElementById("count").innerText = `${d}d ${h}h ${m}m ${s}s`;
+}, 1000);
+
+// Section Reveal
+const secs = document.querySelectorAll('.section');
+window.addEventListener('scroll', () => {
+    secs.forEach(sec => {
+        if(sec.getBoundingClientRect().top < window.innerHeight - 120)
+            sec.classList.add('show');
+    });
+});
+
+// Floating Particles
+setInterval(() => {
+    let p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random()*100 + 'vw';
+    p.style.top = '100vh';
+    p.style.animationDuration = (4 + Math.random()*4) + 's';
+    document.body.appendChild(p);
+    setTimeout(()=> p.remove(), 8000);
+}, 300);
+
+// Popup
+function openMsg(){ document.getElementById('popup').classList.add('show'); }
+function closeMsg(){ document.getElementById('popup').classList.remove('show'); }
+
+// Tap Explosion
+window.addEventListener('click', (e)=>{
+    let t = document.createElement('div');
+    t.className = 'tap-pop';
+    t.style.left = e.clientX + 'px';
+    t.style.top = e.clientY + 'px';
+    document.body.appendChild(t);
+    setTimeout(()=> t.remove(), 600);
+});
+</script>
+
+</body>
+</html>
