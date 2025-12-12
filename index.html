@@ -77,18 +77,24 @@
 
     /* ✨ Photo Frame */
     .frame {
-        width: 300px;
-        height: 350px;
-        margin: auto;
-        border: 6px solid gold;
-        border-radius: 15px;
-        box-shadow: 0 0 25px gold;
-        overflow: hidden;
-    }
+    width: 300px;
+    height: 350px;
+    margin: auto;
+    border: 6px solid gold;
+    border-radius: 15px;
+    box-shadow: 0 0 25px gold;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    .frame img {
-        width: 100%; height: 100%; object-fit: cover;
-    }
+.frame img {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
 
     /* ✨ Popup */
     #popup {
@@ -227,4 +233,5 @@ window.addEventListener('click', (e)=>{
 
 </body>
 </html>
+
 
