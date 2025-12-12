@@ -84,14 +84,14 @@
     border-radius: 15px;
     box-shadow: 0 0 25px gold;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
 }
 
 .frame img {
-    min-width: 100%;
-    min-height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -233,5 +233,6 @@ window.addEventListener('click', (e)=>{
 
 </body>
 </html>
+
 
 
