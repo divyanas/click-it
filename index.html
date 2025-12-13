@@ -44,6 +44,21 @@
         display: inline-block;
     }
 
+    .scroll-hint {
+    margin-top: 18px;
+    font-size: 1.1rem;
+    color: #ffd6ff;
+    opacity: 0.85;
+    animation: bounce 1.6s infinite;
+    letter-spacing: 1px;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+}
+
+
     /* ✨ Floating soft particles */
     .particle {
         position: fixed;
@@ -148,6 +163,8 @@
 <div class="hero">
     <h1>Advance Happy Birthday Mama 💛</h1>
     <div class="count-box" id="count"></div>
+    <div class="scroll-hint">⬇ Scroll down to see more ⬇</div>
+
 </div>
 
 <!-- SECTION 1 -->
@@ -235,6 +252,7 @@ window.addEventListener('click', (e)=>{
 
 </body>
 </html>
+
 
 
 
